@@ -12,13 +12,14 @@ def delivery_report(err, msg):
 
 
 path_data_pokemon = "data/pokedex.json"
-data = open(path_data_pokemon, 'r' )
-data = json.load(data)
+data_s = open(path_data_pokemon, 'r' )
+data_j = json.load(data_s)
+data_s.close()
 
 topic = "pokedex"
 
 try:
-    for pokemon in data:
+    for pokemon in data_j:
         p.produce(topic, str(pokemon), callback=delivery_report)
         p.poll(2.0)
 
