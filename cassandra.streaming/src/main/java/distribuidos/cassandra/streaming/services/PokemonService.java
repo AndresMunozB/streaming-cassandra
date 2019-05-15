@@ -19,4 +19,7 @@ public class PokemonService {
         pokemonRepository.findAll().forEach(products::add); //fun with Java 8
         return products;
     }
+    public Pokemon create(Pokemon pokemon){
+        return pokemonRepository.save(pokemon);
+    }
 }
