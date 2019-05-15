@@ -1,5 +1,6 @@
 package distribuidos.cassandra.streaming.services;
 
+import com.datastax.driver.core.utils.UUIDs;
 import distribuidos.cassandra.streaming.models.Pokemon;
 import distribuidos.cassandra.streaming.repositories.PokemonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class PokemonService {
         return products;
     }
     public Pokemon create(Pokemon pokemon){
+        pokemon.setId(UUIDs.timeBased());
         return pokemonRepository.save(pokemon);
     }
 }
