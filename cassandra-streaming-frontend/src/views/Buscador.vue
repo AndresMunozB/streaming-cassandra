@@ -5,8 +5,19 @@
 </template>
 
 <script>
+  import pokemonService from  '../services/pokemonService';
 export default {
-  name: "Buscador"
+  name: "Buscador",
+  data(){
+    return {
+      pokemones:[]
+    }
+  },
+  created() {
+      pokemonService.findAll((res)=>{
+        this.pokemones = res.data;
+      })
+  }
 };
 </script>
 
