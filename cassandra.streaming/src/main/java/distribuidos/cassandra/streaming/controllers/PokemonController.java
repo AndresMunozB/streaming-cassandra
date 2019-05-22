@@ -5,10 +5,7 @@ import distribuidos.cassandra.streaming.services.PokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,18 @@ public class PokemonController {
     public ResponseEntity<Pokemon> create(@RequestBody Pokemon pokemon){
         return ResponseEntity.ok(pokemonService.create(pokemon));
     }
+
+    @GetMapping("/type")
+    public ResponseEntity<List<Pokemon>> getPokemonesByType(@RequestParam String type)
+    {
+        return ResponseEntity.ok(pokemonService.getPokemonesByType(type));
+    }
+
+    @GetMapping("/name")
+    public ResponseEntity<List<Pokemon>> getPokemonesByName(@RequestParam String name)
+    {
+        return ResponseEntity.ok(pokemonService.getPokemonesByName(name));
+    }
+
 
 }
