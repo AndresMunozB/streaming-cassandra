@@ -1,8 +1,9 @@
 import json
+import random
 from confluent_kafka import Producer
 
 
-p = Producer({'bootstrap.servers': '52.90.206.23:9092'})
+p = Producer({'bootstrap.servers': '34.238.53.42:9092'})
 
 def delivery_report(err, msg):
     if err is not None:
@@ -19,9 +20,12 @@ data_s.close()
 topic = "pokedex"
 
 try:
-    for pokemon in data_j:
-        p.produce(topic, str(pokemon), callback=delivery_report)
-        p.poll(2.0)
+	while True:
+		index = random.randint(0,len(data_j)-1)
+		pokemon = data_j[index]
+		print(pokemon)
+		p.produce(topic, str(pokemon), callback=delivery_report)
+		p.poll(2.0)
 
 except KeyboardInterrupt:
     pass
