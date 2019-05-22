@@ -21,7 +21,7 @@ public class Pokemon {
     private String name;
 
     @Column
-    private int pokemonId;
+    private Integer pokemonId;
 
     @Column
     private String firstType;
@@ -30,21 +30,21 @@ public class Pokemon {
     private String secondType;
 
     @Column
-    private int HP;
+    private Integer HP;
 
     @Column
-    private int attack;
+    private Integer attack;
 
     @Column
-    private int defense;
+    private Integer defense;
 
     @Column
-    private int speed;
+    private Integer speed;
 
     @Column
-    private Long latitude;
+    private Float latitude;
 
     @Column
-    private Long longitude;
+    private Float longitude;
 
 }
