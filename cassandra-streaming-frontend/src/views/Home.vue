@@ -14,6 +14,9 @@
         <h1 class="display-2 font-weight-bold mb-3">
           Bienvenido a Plataforma Pokémon
         </h1>
+        <p class="display-1 font-weight-bold mb-3">
+          Pokemones avistados: {{count}}
+        </p>
         <p class="subheading font-weight-regular">
           Plataforma como servicio para...
           <br />
@@ -29,7 +32,20 @@
 </template>
 
 <script>
+  import pokemonService from '../services/pokemonService';
 export default {
-  name: "Home"
+  name: "Home",
+  data(){
+    return {
+      count:0
+    }
+  },
+  created() {
+    setInterval(() => {
+      pokemonService.getCount((res)=>{
+        this.count =res.data;
+      });
+    }, 3000);
+  }
 };
 </script>

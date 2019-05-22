@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://localhost:3030",
+    baseURL: "http://34.238.53.42:3030",
     headers: {
         "Content-Type": "application/json"
     }
@@ -16,7 +16,19 @@ const pokemonService = {
             })
             .catch(error => {
                 // eslint-disable-next-line no-console
-                console.log(error);
+                console.log('Error en la consulta: '+ error);
+                return null;
+            });
+    },
+    getCount(cb) {
+        instance
+            .get("/pokemones/count")
+            .then(res => {
+                cb(res);
+            })
+            .catch(error => {
+                // eslint-disable-next-line no-console
+                console.log('Error en la consulta: '+ error);
                 return null;
             });
     },
@@ -28,7 +40,7 @@ const pokemonService = {
             })
             .catch(error => {
                 // eslint-disable-next-line no-console
-                console.log(error);
+                console.log('Error en la consulta: '+ error);
                 return null;
             });
     },
@@ -40,7 +52,7 @@ const pokemonService = {
             })
             .catch(error => {
                 // eslint-disable-next-line no-console
-                console.log(error);
+                console.log('Error en la consulta: '+ error);
                 return null;
             });
     }

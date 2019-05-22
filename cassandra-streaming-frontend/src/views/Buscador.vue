@@ -1,23 +1,19 @@
 <template>
   <v-container>
     <h1>Buscador</h1>
+    <PokemonList/>
   </v-container>
 </template>
 
 <script>
-  import pokemonService from  '../services/pokemonService';
+
+  import PokemonList from '../components/pokemon/PokemonList';
 export default {
   name: "Buscador",
-  data(){
-    return {
-      pokemones:[]
-    }
-  },
-  created() {
-      pokemonService.findAll((res)=>{
-        this.pokemones = res.data;
-      })
+  components:{
+    PokemonList
   }
+
 };
 </script>
 
