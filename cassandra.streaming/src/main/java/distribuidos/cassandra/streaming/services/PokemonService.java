@@ -38,4 +38,9 @@ public class PokemonService {
     {
         return pokemonRepository.findAllByName(name);
     }
+
+    public Long countPokemons()
+    {
+        return pokemonRepository.count();
+    }
 }

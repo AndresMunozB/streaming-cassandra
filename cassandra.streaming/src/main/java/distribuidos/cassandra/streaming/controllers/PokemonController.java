@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-
+@CrossOrigin
 @RequestMapping(value = "/pokemones")
 public class PokemonController {
     @Autowired
@@ -37,5 +37,10 @@ public class PokemonController {
         return ResponseEntity.ok(pokemonService.getPokemonesByName(name));
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> countPokemones()
+    {
+        return ResponseEntity.ok(pokemonService.countPokemons());
+    }
 
 }
