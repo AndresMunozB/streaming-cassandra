@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class PokemonService {
@@ -23,5 +25,22 @@ public class PokemonService {
     public Pokemon create(Pokemon pokemon){
         pokemon.setId(UUIDs.timeBased());
         return pokemonRepository.save(pokemon);
+    }
+
+    public List<Pokemon> getPokemonesByType(String type)
+    {
+        List<Pokemon> firstType = pokemonRepository.findAllByFirstType(type);
+        List<Pokemon> secondType = pokemonRepository.findAllBySecondType(type);
+        return Stream.concat(firstType.stream(), secondType.stream()).collect(Collectors.toList());
+    }
+
+    public List<Pokemon> getPokemonesByName(String name)
+    {
+        return pokemonRepository.findAllByName(name);
+    }
+
+    public Long countPokemons()
+    {
+        return pokemonRepository.count();
     }
 }
