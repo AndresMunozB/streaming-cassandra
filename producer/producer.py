@@ -23,7 +23,6 @@ try:
 	while True:
 		index = random.randint(0,len(data_j)-1)
 		pokemon = data_j[index]
-		print(index)
 		print(pokemon)
 		p.produce(topic, str(pokemon), callback=delivery_report)
 		p.poll(2.0)
