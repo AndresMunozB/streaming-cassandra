@@ -161,6 +161,7 @@ Por otro lado se tiene el "pipeline" de producción/consumo de información; en 
 ## Resultados
 ### Backend:
 Los servicios expuestos en el backend se presentan en la siguiente tabla:
+
 | path | método | descripción |
 | -------- | -------- | -------- |
 |`/pokemones/`|GET| Obtiene todos los Pokémon que se encuentran en la base datos|
@@ -180,6 +181,7 @@ El desarrollo del frontend consta de 2 vistas:
 
 ### Base de datos
 Usuario con permisos de lectura a la base de datos
+
 | Usuario | Contraseña | Keyspace | host |
 |----------|---------- | ---------| ----- |
 |pikachu | pikapika | pokemones | `34.238.53.42:9042` |
@@ -260,19 +262,3 @@ $ ./Docker.sh
 ```
 
 Los comandos anteriores crean un contenedor que disponibiliza la aplicación de frontend en el puerto 8080.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- a. Maquina linux estándar (tomar como referencia ubuntu server en su última versión LTS)
-- b. Implementar arquitectura como código (Yaml y TerraForm).
