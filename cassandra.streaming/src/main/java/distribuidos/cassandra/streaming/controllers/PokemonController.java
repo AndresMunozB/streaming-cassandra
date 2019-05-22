@@ -37,5 +37,10 @@ public class PokemonController {
         return ResponseEntity.ok(pokemonService.getPokemonesByName(name));
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> countPokemones()
+    {
+        return ResponseEntity.ok(pokemonService.countPokemons());
+    }
 
 }
