@@ -32,7 +32,7 @@ const pokemonService = {
                 return null;
             });
     },
-    findByType(cb,type) {
+    findByType(type,cb) {
         instance
             .get("/pokemones/type?type="+type)
             .then(res => {

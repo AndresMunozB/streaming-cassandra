@@ -38,6 +38,12 @@
             <v-list-tile-title>Registro</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <v-list-tile to="/buscador">
+          <v-list-tile-content>
+            <v-list-tile-title>Buscador</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-menu>
   </v-toolbar>

@@ -5,11 +5,11 @@
         <PokemonList/>
       </v-flex>
 
-      <v-flex xs6>
+      <v-flex xs12 md6>
         <PokemonListByName/>
       </v-flex>
 
-      <v-flex xs6>
+      <v-flex xs12 md6>
         <PokemonListByType/>
       </v-flex>
 

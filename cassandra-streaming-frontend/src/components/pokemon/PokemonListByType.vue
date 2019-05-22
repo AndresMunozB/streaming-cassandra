@@ -44,6 +44,7 @@
         methods:{
             findByType(type){
                 this.loading = true;
+                console.log(type);
                 pokemonService.findByType(type,(res)=>{
                     this.pokemones = res.data;
                     this.loading = false;
