@@ -168,7 +168,6 @@ Los servicios expuestos en el backend se presentan en la siguiente tabla:
 |`/pokemones/type?type={}`|GET| Obtiene todos los Pokémon de cierto tipo |
 |`/pokemon/name?name={}` |GET|Obtiene todos los Pokémon a partir de su nombre científico|
 
-(gráficos de evaluación de tiempos de respuesta, capturas de pantalla de la plataforma funcional, entre otros).
 ### Frontend
 El desarrollo del frontend consta de 2 vistas:
 
